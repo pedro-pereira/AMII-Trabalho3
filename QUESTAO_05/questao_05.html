@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+    </style>
+    <title>Questão 05 - Passeio do quadrado</title>
+</head>
+
+<body onload="iniciaJogo()">
+    <script>
+
+        var quadrado;
+
+        function iniciaJogo() {
+            areaDePasseio.start();
+            quadrado = new component(30, 30, "red", 10, 120);
+        }
+
+        var areaDePasseio = {
+            canvas: document.createElement("canvas"),
+            start: function () {
+                this.canvas.width = 480;
+                this.canvas.height = 270;
+                this.context = this.canvas.getContext("2d");
+                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                this.interval = setInterval(atualizaJogo, 20);
+                window.addEventListener('keydown', function (e) {
+                    areaDePasseio.key = e.keyCode;
+                })
+                window.addEventListener('keyup', function (e) {
+                    areaDePasseio.key = false;
+                })
+            },
+            clear: function () {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }
+        }
+
+        function component(width, height, color, x, y) {
+            this.gamearea = areaDePasseio;
+            this.width = width;
+            this.height = height;
+            this.speedX = 0;
+            this.speedY = 0;
+            this.x = x;
+            this.y = y;
+            this.update = function () {
+                ctx = areaDePasseio.context;
+                ctx.fillStyle = color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+            this.newPos = function () {
+                this.x += this.speedX;
+                this.y += this.speedY;
+            }
+        }
+
+        function atualizaJogo() {
+            areaDePasseio.clear();
+            quadrado.speedX = 0;
+            quadrado.speedY = 0;
+            if (areaDePasseio.key && areaDePasseio.key == 37) { quadrado.speedX = -1; }
+            if (areaDePasseio.key && areaDePasseio.key == 39) { quadrado.speedX = 1; }
+            if (areaDePasseio.key && areaDePasseio.key == 38) { quadrado.speedY = -1; }
+            if (areaDePasseio.key && areaDePasseio.key == 40) { quadrado.speedY = 1; }
+            quadrado.newPos();
+            quadrado.update();
+        }
+    </script>
+    <p>Mova o quadrado utilizando as setas do teclado.</p>
+</body>
+
+</html>

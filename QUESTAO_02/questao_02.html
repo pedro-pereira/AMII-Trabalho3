@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<!--
+    Closure é quando uma função é capaz de "lembrar" e acessar seu escopo léxico 
+    mesmo quando ela está sendo executada fora de seu escopo léxico.
+    
+    Closures (do inglês, fechamento) são funções que:
+    referenciam variáveis livres, isto é, variáveis que não foram definidas dentro da função 
+    e nem são parâmetro da função     têm acesso a essas variáveis mesmo depois que elas saem de escopo.
+    Do ponto de vista operacional, uma closure é um registro que armazena uma função 
+    juntamente com um ambiente de referenciamento.
+-->
+<HEAD>
+    <meta charset="utf-8" />
+    <title> Questão 02 - Closures e multiplicação </title>
+    <script>
+
+        let valor1 = 5
+        function multiplicaIsto(n) {
+            let ret = n * valor1
+            return ret
+        }
+
+        function multiplica() {
+            var valor2 = document.getElementById('valor2').value;
+            let produto = multiplicaIsto(valor2);
+            var texto = document.getElementById('resultado');
+            texto.innerHTML = "O resultado da multiplicacao é " + produto;
+        }
+    </script>
+</HEAD>
+
+<BODY>
+    Informe o valor que será multiplicado, inicialmente por 5
+    <input type="number" id="valor2">
+
+    <input type="button" value="Verificar" style="margin-top:4px; height:25px; width:150px; font-size:14px"
+        onclick="multiplica()" />
+
+    <p id="resultado">O resultado da multiplicacao é </p>
+</BODY>

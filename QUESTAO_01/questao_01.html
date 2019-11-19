@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <TITLE> Questão 01 - Comparação entre tipos </TITLE>
+    <script>
+        function comparaValores(a, b) {
+            //evaluates to true as a and b are both 1
+            if (a == b) {
+                alert("Verdade");
+            } else {
+                alert("Falso");
+            }
+        }
+
+        function comparaTiposEValores(a, b) {
+            //evaluates to false as a is not the same type as b
+            if (a === b) {
+                alert("Verdade");
+            } else {
+                alert("Falso");
+            }
+        }
+
+        function comparacaoComIf() {
+            var x = 0;
+
+            if (x == 10) {
+                alert('A comparação é verdadeira. O valor de x é ' + x);
+            } else {
+                alert('A comparação é false. O valor de x é ' + x);
+            }
+
+            if(x = 10) {
+                alert('Isso não é uma comparação. É uma atribuição, que retornará TRUE. Logo, a condição será validada.');
+            }
+        }
+    </script>
+</HEAD>
+
+<BODY>
+    <table>
+        <tr>
+            <td>
+                O valor de X é 20...
+            </td>
+        </tr>
+        <tr>
+            <td>
+                O valor de Y é "20"...
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dúvida: X == Y ?
+            </td>
+            <td>
+                <input type="button" value="Verificar" style="margin-top:4px; height:25px; width:150px; font-size:14px"
+                    onclick="comparaValores(20, '20')"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dúvida: X === Y ?
+            </td>
+            <td>
+                <input type="button" value="Verificar" style="margin-top:4px; height:25px; width:150px; font-size:14px"
+                    onclick="comparaTiposEValores(20, '20');" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                O que fazer: if(x == 10) e if(x = 10)?
+            </td>
+            <td>
+                <input type="button" value="Verificar" style="margin-top:4px; height:25px; width:150px; font-size:14px"
+                        onclick="comparacaoComIf()" />
+            </td>
+        </tr>
+    </table>
+
+</BODY>
+
+</HTML>

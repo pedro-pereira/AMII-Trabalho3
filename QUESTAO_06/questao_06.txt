@@ -1,0 +1,6 @@
+Algumas das vantagens do flexbox são:
+
+* O conteúdo da página pode ser colocado em qualquer direção (direita, esquerda, para baixo ou para cima);
+* Pedaços de conteúdo podem ter sua ordem visual invertida ou reorganizada;
+* Itens podem “flexionar” seus tamanhos para responder ao espaço disponível e podem ser alinhados em relação ao seu contêiner ou a outro;
+* Conseguir layouts de colunas iguais (independentemente da quantidade de conteúdo dentro de cada coluna) é muito fácil;

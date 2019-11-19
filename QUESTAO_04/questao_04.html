@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <TITLE> Questão 04 - Flexbox </TITLE>
+
+    <style>
+        @import "compass/css3";
+
+        .flex-container {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex-flow: row wrap;
+            justify-content: space-around;
+        }
+
+        .flex-item {
+            background: tomato;
+            padding: 5px;
+            width: 200px;
+            height: 150px;
+            margin-top: 10px;
+
+            line-height: 150px;
+            color: white;
+            font-weight: bold;
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
+</HEAD>
+
+<BODY>
+    <ul class="flex-container">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+        <li class="flex-item">6</li>
+    </ul>
+</BODY>
+
+<!--
+Flexbox é um recurso CSS3 que serve de modelo para desenvolvimento de layouts para websites e aplicações web 
+visando organizar elementos dentro de contêiners de forma flexível conforme sua necessidade.
+E essa flexibilidade se caracteriza pela capacidade de alterar a largura e / ou a altura dos elementos 
+(que são tratados como itens) para se adequarem ao espaço disponível em qualquer dispositivo de exibição. 
+Um recipiente flexível expande os itens para preencher o espaço livre disponível ou encolhe-los para evitar o transbordamento.
+Além disso, CSS Flexbox permite que se alinhem os itens horizontalmente e verticalmente, 
+ordenando-os em diferentes posições no layout independente de como aparecem no documento HTML, 
+e também permite que disponha os itens na horizontal (linhas) e na vertical (colunas).
+-->

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Questão 09 - Criando elementos dinamicamente</title>
+    <meta charset="utf-8" />
+    <script>
+
+        /*Objeto literal para armazenamento de valores.*/
+        var fruta = {
+            "frutas": [
+                "Banana", "Melancia", "Goiaba", "Uva", "Morango"
+            ]
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            /*Quando a arvore for carregada..*/
+            carregarDiv(); //Chama a função que carrega os elementos.
+        }, false);
+
+        function carregarDiv() {
+
+            //    Gravamos em uma variável o objeto pai, neste caso dvPrincipal.
+            var dvPrincipal = document.getElementById("dvPrincipal");
+
+            /*
+                createElement rece por parâmetro a tag que será criada, dispensando fechar ou uso de <>.
+                Neste exemplo usamos select, automáticamente ele já assume:  <select>     </select>
+                Gravamos a ação na variável select, pois ainda não foi afiliado.
+            */
+            var select = document.createElement("select");
+
+            // appendChild() - Devemos passar por parâmetro qual elemento vai ter um filho, ou seja, onde será inserido o novo elemento.
+            dvPrincipal.appendChild(select);
+
+            //    Para este exemplo, foi usado um objeto literal contendo os valores. Para percorrer o objeto, será usado um laço for.
+            for (i = 0; i < 5; i++) {
+                var option = document.createElement("option");
+
+                //    Criamos um novo elemento do tipo option (<option></option>).
+                //    Dentro do elemento option, inserimos um texto.
+                option.innerHTML = fruta.frutas[i];
+
+                /*
+                Podemos adicionar atributos a elementos, mas é claro que apenas os suportados.    
+                No exemplo abaixo é adicionado o atributo value ao elemento contendo o valor da variável i + 1, 
+                ou seja, se i vale 0 e adicionar 1, valerá um...
+                */
+                option.value = (i + 1);
+
+                //Dentro do objeto select adicionamos um filho, neste caso o option, contendo seus valores e atributos.
+                select.appendChild(option);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="dvPrincipal">
+    </div>
+</body>
+
+</html>

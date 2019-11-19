@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <TITLE> Questão 03 - Ordenando vetores </TITLE>
+    <script>
+
+        function comparaNumeros(a, b) {
+            return a - b;
+        }
+        function ordena() {
+            var entradas = document.getElementsByClassName("valores");
+            var valores = new Array;
+            for (let index = 0; index < entradas.length; index++) {
+                const elemento = entradas[index].value;
+
+                valores[index] = elemento;
+            }
+
+            valores.sort(comparaNumeros);
+            console.log(valores);
+
+            var textoComOrdenacao = document.getElementById("ordenados");
+            textoComOrdenacao.innerHTML += valores;
+        }
+    </script>
+</HEAD>
+
+<BODY>
+    <span>Valor 1  </span><input id="valor1"  class="valores"><br><br>
+    <span>Valor 2  </span><input id="valor2"  class="valores"><br><br>
+    <span>Valor 3  </span><input id="valor3"  class="valores"><br><br>
+    <span>Valor 4  </span><input id="valor4"  class="valores"><br><br>
+    <span>Valor 5  </span><input id="valor5"  class="valores"><br><br>
+    <span>Valor 6  </span><input id="valor6"  class="valores"><br><br>
+    <span>Valor 7  </span><input id="valor7"  class="valores"><br><br>
+    <span>Valor 8  </span><input id="valor8"  class="valores"><br><br>
+    <span>Valor 9  </span><input id="valor9"  class="valores"><br><br>
+    <span>Valor 10 </span><input id="valor10" class="valores"><br><br>
+
+    <input type="button" value="Ordenar" style="margin-top:4px; height:25px; width:150px; font-size:14px"
+        onclick="ordena()" />
+
+    <p id="ordenados">Os valores ordenados são: </p>
+</BODY>
